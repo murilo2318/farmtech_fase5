@@ -1,0 +1,110 @@
+# FarmTech Dashboard
+
+Dashboard interativo para monitoramento agrícola, integrando sensores físicos e previsões de produtividade.  
+O projeto utiliza **Flask**, **MySQL**, **Tailwind CSS** e **Chart.js** para visualização de dados.
+
+---
+
+## 🗂 Estrutura do Projeto
+farmtech-dashboard/
+│
+├─ app.py                 # Código principal em Flask (rotas e API)
+├─ config.py              # Configurações do banco de dados
+├─ requirements.txt       # Dependências do projeto
+├─ templates/
+│   └─ index.html         # HTML do dashboard
+└─ README.md              # Documentação do projeto
+---
+
+## ⚙️ Funcionalidades
+
+- Dashboard com **cards de estatísticas**: fazendas, talhões, culturas e sensores.
+- **Gráficos interativos**:
+  - Temperatura (últimos 7 dias)
+  - Umidade (últimos 7 dias)
+  - Previsão de produtividade por cultura (Soja e Milho)
+- **Status dos sensores** com cores para fácil identificação:
+  - Verde: ativo
+  - Amarelo: manutenção
+  - Vermelho: inativo
+- Simulação de dados em tempo real (atualização a cada 5 segundos).
+- Responsivo e estilizado com Tailwind CSS.
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- **Backend**: Python, Flask
+- **Banco de dados**: MySQL
+- **Frontend**: HTML, Tailwind CSS, Chart.js
+- **Outros**: Font Awesome para ícones
+
+---
+
+## 🗃 Banco de Dados
+
+### Tabelas principais:
+
+#### `sensores`
+| Coluna       | Tipo        | Descrição                       |
+|-------------|------------|---------------------------------|
+| id          | INT        | Identificador do sensor          |
+| nome        | VARCHAR    | Nome do sensor                   |
+| tipo        | VARCHAR    | Tipo (DHT22, Soil Moisture, etc)|
+| talhao      | VARCHAR    | Talhão em que está instalado     |
+| status      | ENUM       | `ATIVO`, `INATIVO`, `MANUTENÇÃO`|
+| data_instalacao | DATE    | Data de instalação               |
+
+#### `leituras`
+| Coluna       | Tipo        | Descrição                       |
+|-------------|------------|---------------------------------|
+| id          | INT        | Identificador da leitura         |
+| sensor_id   | INT        | Relacionamento com `sensores.id`|
+| temperatura | FLOAT      | Temperatura registrada           |
+| umidade     | FLOAT      | Umidade registrada               |
+| data_hora   | DATETIME   | Data e hora da leitura           |
+
+> ⚠️ Certifique-se de atualizar `config.py` com suas credenciais do MySQL.
+
+---
+
+## 🚀 Como Rodar
+
+1. **Clonar o repositório:**
+
+```bash
+git clone https://github.com/SEU_USUARIO/farmtech-dashboard.git
+cd farmtech-dashboard
+CREATE DATABASE farmtech;
+USE farmtech;
+
+CREATE TABLE sensores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50),
+    tipo VARCHAR(50),
+    talhao VARCHAR(50),
+    status ENUM('ATIVO','INATIVO','MANUTENÇÃO'),
+    data_instalacao DATE
+);
+
+CREATE TABLE leituras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sensor_id INT,
+    temperatura FLOAT,
+    umidade FLOAT,
+    data_hora DATETIME,
+    FOREIGN KEY (sensor_id) REFERENCES sensores(id)
+);
+Criar banco de dados e tabelas no MySQL
+
+uturas Melhorias
+	•	Integração com sensores físicos reais via ESP32.
+	•	Dashboard interativo com filtros por talhão e cultura.
+	•	Exportação de dados para CSV e relatórios automáticos.
+	•	Alertas automáticos para sensores inativos ou em manutenção.
+
+⸻
+
+🤝 Contribuição
+
+Contribuições são bem-vindas! Abra um pull request ou issue para sugerir melhorias.
