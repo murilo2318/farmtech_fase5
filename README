@@ -5,7 +5,7 @@ O projeto utiliza **Flask**, **MySQL**, **Tailwind CSS** e **Chart.js** para vis
 
 ---
 
-## 🗂 Estrutura do Projeto
+## Estrutura do Projeto
 farmtech-dashboard/
 │
 ├─ app.py                 # Código principal em Flask (rotas e API)
@@ -16,7 +16,7 @@ farmtech-dashboard/
 └─ README.md              # Documentação do projeto
 ---
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
 - Dashboard com **cards de estatísticas**: fazendas, talhões, culturas e sensores.
 - **Gráficos interativos**:
@@ -32,7 +32,7 @@ farmtech-dashboard/
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Backend**: Python, Flask
 - **Banco de dados**: MySQL
@@ -41,7 +41,7 @@ farmtech-dashboard/
 
 ---
 
-## 🗃 Banco de Dados
+##Banco de Dados
 
 ### Tabelas principais:
 
@@ -64,11 +64,11 @@ farmtech-dashboard/
 | umidade     | FLOAT      | Umidade registrada               |
 | data_hora   | DATETIME   | Data e hora da leitura           |
 
-> ⚠️ Certifique-se de atualizar `config.py` com suas credenciais do MySQL.
+> Certifique-se de atualizar `config.py` com suas credenciais do MySQL.
 
 ---
 
-## 🚀 Como Rodar
+## Como Rodar
 
 1. **Clonar o repositório:**
 
@@ -105,8 +105,14 @@ uturas Melhorias
 
 ⸻
 
-🤝 Contribuição
+Contribuição
 
 Contribuições são bem-vindas! Abra um pull request ou issue para sugerir melhorias.
 
-Link Vídeo: https://youtu.be/RhttrkyQzT4
+### Vídeo Demonstrativo
+Resumo do vídeo:  
+- Introdução do projeto e do integrante;  
+- Exibição das análises exploratórias e clusters;  
+- Conclusões sobre os rendimentos previstos e limitações do modelo.
+
+Assista o vídeo no YouTube (não listado): https://youtu.be/RhttrkyQzT4
